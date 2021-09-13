@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TestDrivenDevelopmentMS549;
 
 namespace TDDMS549Tests
 {
@@ -6,9 +7,11 @@ namespace TDDMS549Tests
     public class TDDMS549Tests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void InitStackRH()
         {
-            StackRH myStack;
+            int stackSize = 10;
+            StackRH myStack = new StackRH(stackSize);
+            Assert.AreEqual(stackSize - 1, myStack.Max);
         }
     }
 }

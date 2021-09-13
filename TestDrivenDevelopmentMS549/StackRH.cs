@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace TestDrivenDevelopmentMS549
 {
-    class StackRH
+    public class StackRH
     {
+        private int[] stack;
+        private int top;
+        private int maxSize;
+
+        public int Top { get { return top; } }
+        public int Max { get { return maxSize; } }
+
+        public StackRH(int stackSize)
+        {
+            stack = new int[stackSize];
+            top = -1;
+            maxSize = stackSize - 1;
+        }
     }
 }
