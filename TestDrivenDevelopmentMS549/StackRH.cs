@@ -9,7 +9,7 @@ namespace TestDrivenDevelopmentMS549
     public class StackRH
     {
         private int[] stack;
-        private int top;
+        private int top = -1;
         private int maxSize;
 
         public int Top { get { return top; } }
@@ -18,7 +18,6 @@ namespace TestDrivenDevelopmentMS549
         public StackRH(int stackSize)
         {
             stack = new int[stackSize];
-            top = -1;
             maxSize = stackSize - 1;
         }
 
@@ -26,12 +25,35 @@ namespace TestDrivenDevelopmentMS549
         {
             if (top < maxSize)
             {
-                top++;
-                stack[top] = value;
+                stack[++top] = value;
                 return true;
             }
 
             return false;
+        }
+
+        public int? Peek()
+        {
+            if (top >= 0)
+            {
+                return stack[top];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public int? Pop()
+        {
+            if (top >= 0)
+            {
+                return stack[top--];
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
