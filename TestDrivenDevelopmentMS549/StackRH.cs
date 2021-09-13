@@ -21,5 +21,17 @@ namespace TestDrivenDevelopmentMS549
             top = -1;
             maxSize = stackSize - 1;
         }
+
+        public bool Push(int value)
+        {
+            if (top < maxSize)
+            {
+                top++;
+                stack[top] = value;
+                return true;
+            }
+
+            return false;
+        }
     }
 }
